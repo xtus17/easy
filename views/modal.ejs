@@ -10,11 +10,37 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .modal-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .modal-content {
+        max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+        width: 100%;
+      }
+
+      .modal-body {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <div class="modal" id="successModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-container">
+      <div class="modal" id="successModal">
+        <div class="modal-dialog modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Reporte de Alerta EasySOS.</h4>
             <button type="button" class="close" data-dismiss="modal">
