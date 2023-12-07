@@ -1,7 +1,7 @@
 const { Expo } = require("expo-server-sdk");
 
 const expo = new Expo({});
-const RTDatabase = process.env.RTD;
+const RTDatabase = "https://easydb-6b44f-default-rtdb.firebaseio.com/";
 
 const sendNotifications = async (customBody) => {
   try {

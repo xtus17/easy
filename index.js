@@ -61,7 +61,7 @@ app.post("/send-notifications", async (req, res) => {
     });
     */
   } catch (error) {
-    res.send("Notificaciones no fueron enviadas con éxito");
+    res.send("Notificaciones no fueron enviadas con éxito", error);
     /*
     res.render("modal", {
       errorMessage: "Las notificaciones no fueron enviadas con éxito",
