@@ -7,3 +7,25 @@ body {
     text-align: center;
   }
   
+
+
+  /* Agrega estilos personalizados aquí */
+.modal-content {
+  background-color: #d9534f; /* Color de fondo rojo */
+  color: #fff; /* Color de texto blanco */
+}
+
+.modal-header, .modal-footer {
+  border-color: #fff; /* Color del borde blanco */
+}
+
+.btn-danger {
+  background-color: #d9534f; /* Color de fondo del botón rojo */
+  border-color: #d9534f; /* Color del borde del botón rojo */
+  color: #fff; /* Color del texto blanco */
+}
+
+.btn-danger:hover {
+  background-color: #c9302c; /* Color de fondo del botón rojo al pasar el ratón */
+  border-color: #c9302c; /* Color del borde del botón rojo al pasar el ratón */
+}

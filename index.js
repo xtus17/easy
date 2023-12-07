@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "assets")));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
@@ -50,24 +51,22 @@ app.post("/send-notifications", async (req, res) => {
 */
 
 app.post("/send-notifications", async (req, res) => {
-  const customBody = req.body.customBody || "EasySos";
+  const customBody = req.body.customBody || "EasySOS App";
 
   try {
     await sendNotifications(customBody);
-    res.send("Notificaciones fueron enviadas con éxito");
-    /*
+    // res.send("Notificaciones fueron enviadas con éxito");
+
     res.render("modal", {
       successMessage: "Las notificaciones fueron enviadas con éxito",
     });
-    */
   } catch (error) {
-    res.send("Notificaciones no fueron enviadas con éxito", error);
-    /*
+    // res.send("Notificaciones no fueron enviadas con éxito", error);
+
     res.render("modal", {
       errorMessage: "Las notificaciones no fueron enviadas con éxito",
     });
     res.status(500).send("Error al enviar notificaciones");
-    */
   }
 });
 

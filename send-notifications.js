@@ -1,7 +1,7 @@
 const { Expo } = require("expo-server-sdk");
 
 const expo = new Expo({});
-const RTDatabase = "https://easydb-6b44f-default-rtdb.firebaseio.com/";
+const RTDatabase = process.env.RTD;
 
 const sendNotifications = async (customBody) => {
   try {
@@ -23,7 +23,7 @@ const sendNotifications = async (customBody) => {
         return {
           to: pushToken,
           sound: "default",
-          title: "Este es un mensaje de Alerta de EasySOS",
+          title: "Este es un mensaje de Alerta de EasySOS App",
           body: customBody,
         };
       })

@@ -1,10 +1,49 @@
-<!-- success-modal.ejs -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EasySOS</title>
+    <link rel="icon" href="/iconNotification.png" type="image/x-icon" />
+    <title>EasySOS App</title>
+    <link rel="icon" href="/iconNotification.png" type="image/x-icon" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="EasySOS App - Plataforma de Alerta Ciudadana"
+    />
+    <meta
+      name="keywords"
+      content="EasySOS App, alertas, seguridad ciudadana, emergencias"
+    />
+    <meta name="author" content="Xaler" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="URL DE TU SITIO" />
+    <meta
+      property="og:title"
+      content="EasySOS App - Plataforma de Alerta Ciudadana"
+    />
+    <meta
+      property="og:description"
+      content="Envía alertas ciudadanas de manera rápida y sencilla con EasySOS App."
+    />
+    <meta property="og:image" content="URL DE UNA IMAGEN REPRESENTATIVA" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="URL DE TU SITIO" />
+    <meta
+      property="twitter:title"
+      content="EasySOS App - Plataforma de Alerta Ciudadana"
+    />
+    <meta
+      property="twitter:description"
+      content="Envía alertas de manera rápida y sencilla con EasySOS App."
+    />
+    <meta property="twitter:image" content="URL DE UNA IMAGEN REPRESENTATIVA" />
 
     <link
       rel="stylesheet"
@@ -28,12 +67,7 @@
       }
 
       .modal-content {
-        max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
         width: 100%;
-      }
-
-      .modal-body {
-        text-align: center;
       }
     </style>
   </head>
@@ -42,7 +76,7 @@
       <div class="modal" id="successModal">
         <div class="modal-dialog modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Reporte de Alerta EasySOS.</h4>
+            <h4 class="modal-title">EasySOS App</h4>
             <button type="button" class="close" data-dismiss="modal">
               &times;
             </button>
@@ -50,18 +84,16 @@
 
           <div class="modal-body">
             <% if (typeof successMessage !== 'undefined') { %>
-            <p style="font-weight: bold; font-size: 16px; color: black">
-              <%= successMessage %>
-            </p>
+            <p><%= successMessage %></p>
             <% } else if (typeof errorMessage !== 'undefined') { %>
-            <p class="text-danger"><%= errorMessage %></p>
+            <p><%= errorMessage %></p>
             <% } %>
           </div>
 
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="<%= typeof successMessage !== 'undefined' ? 'btn btn-success' : 'btn btn-danger' %>"
               data-dismiss="modal"
               onclick="redirectToIndex()"
             >
